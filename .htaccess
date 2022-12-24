@@ -1,0 +1,16 @@
+# Log Erros In A File
+php_flag log_errors On
+php_value error_log "../../errors.txt"
+
+# Don't Display Erros To The User
+php_flag display_errors off
+
+# Disable Access To Files
+RewriteCond %{HTTP_REFERER} !^http://ask-answer.epizy.com [NC]
+RewriteRule \.(php|txt|png|jpg)$ - [F]
+
+# Disable Directory Listing
+Options -indexes
+
+
+
